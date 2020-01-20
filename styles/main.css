@@ -639,7 +639,15 @@
        object-position: center;
     border-radius: 50%;
     margin: 87px;
-    z-index: 1; }
+    z-index: 1;
+    -webkit-transition: border-radius 0.4s, -webkit-transform 0.4s;
+    transition: border-radius 0.4s, -webkit-transform 0.4s;
+    transition: transform 0.4s, border-radius 0.4s;
+    transition: transform 0.4s, border-radius 0.4s, -webkit-transform 0.4s; }
+    .person__img:hover {
+      -webkit-transform: scale(1.8, 1.8);
+              transform: scale(1.8, 1.8);
+      border-radius: 16px; }
   .person__text {
     position: relative;
     max-width: 250px;
@@ -848,10 +856,26 @@
   .contact__relation {
     margin-top: 16px; }
   .contact__img {
-    margin-right: 40px; }
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 32px;
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/what-we-do/facebook.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transition: background-image 0.4s;
+    transition: background-image 0.4s; }
     .contact__img:hover {
-      fill: #2060f6;
-      color: #2060f6; }
+      background-image: url(../images/what-we-do/facebook-blue.svg); }
+    .contact__img--2 {
+      background-image: url(../images/what-we-do/twitter.svg); }
+      .contact__img--2:hover {
+        background-image: url(../images/what-we-do/twitter-blue.svg); }
+    .contact__img--3 {
+      background-image: url(../images/what-we-do/instagram.svg); }
+      .contact__img--3:hover {
+        background-image: url(../images/what-we-do/instagram-blue.svg); }
 
 @media screen and (max-width: 970px) {
   .contact__head {
