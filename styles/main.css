@@ -171,6 +171,7 @@
   font-weight: 600;
   color: #fff;
   line-height: 56px;
+  outline: none;
   text-decoration: none;
   background-color: #2060f6;
   border-radius: 8px;
@@ -321,9 +322,23 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
-  .service__box--move {
-    -webkit-transform: translateY(132px);
-            transform: translateY(132px); }
+  .service__box {
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transition: transform 0.4s, -webkit-transform 0.4s; }
+    .service__box:hover {
+      -webkit-box-shadow: 0 9px 16px rgba(37, 41, 49, 0.2);
+              box-shadow: 0 9px 16px rgba(37, 41, 49, 0.2); }
+    .service__box--stand:hover {
+      -webkit-transform: translateY(-10px);
+              transform: translateY(-10px); }
+    .service__box--move {
+      -webkit-transform: translateY(132px);
+              transform: translateY(132px); }
+      .service__box--move:hover {
+        -webkit-transform: translateY(122px);
+                transform: translateY(122px); }
 
 @media screen and (max-width: 970px) {
   .service {
@@ -333,7 +348,10 @@
       font-size: 28px; }
     .service__box--move {
       -webkit-transform: none;
-              transform: none; } }
+              transform: none; }
+      .service__box--move:hover {
+        -webkit-transform: translateY(-10px);
+                transform: translateY(-10px); } }
 
 @media screen and (max-width: 650px) {
   .service__boxes {
@@ -649,9 +667,9 @@
     transition: transform 0.4s, border-radius 0.4s;
     transition: transform 0.4s, border-radius 0.4s, -webkit-transform 0.4s; }
     .person__img:hover {
-      -webkit-transform: scale(1.8, 1.8);
-              transform: scale(1.8, 1.8);
-      border-radius: 16px; }
+      -webkit-transform: scale(1.2, 1.2);
+              transform: scale(1.2, 1.2);
+      border-radius: 20px; }
   .person__text {
     position: relative;
     max-width: 250px;
@@ -812,8 +830,12 @@
     max-width: 460px;
     height: 41px;
     border: 0;
+    outline: none;
     border-bottom: 1px solid #fff;
     background-color: #2c2c2c; }
+    .form__input:-webkit-autofill {
+      -webkit-box-shadow: inset 0 0 0 50px #2c2c2c;
+      -webkit-text-fill-color: #fff; }
     .form__input::-webkit-input-placeholder {
       font-size: 15px;
       line-height: 22px;
